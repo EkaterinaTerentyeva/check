@@ -9,7 +9,7 @@ df_car_ads_mod= pd.DataFrame(df_car_ads_mod.loc[df_car_ads_mod['price'] < 42498]
 
 st.header('The Number of Days Ad is Listed Per Price and Vehicle Condition')
 fig = px.scatter(df_car_ads_mod, x="days_listed", y="price", color="condition",
-                 size='days_listed', hover_data=['make','type'], color_discrete_sequence=px.colors.qualitative.Light24,
+                 size='days_listed', hover_data=['type'], color_discrete_sequence=px.colors.qualitative.Light24,
                  width = 1000, height = 1000, title='The Number of Days Ad is Listed Per Price and Condition of Vehicle')
 fig.show()
 

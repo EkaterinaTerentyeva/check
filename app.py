@@ -15,7 +15,7 @@ fig = px.scatter(df_car_ads_mod, x="days_listed", y="price", color="condition",
                  size='days_listed', hover_data=['type', 'make'], color_discrete_sequence=px.colors.qualitative.Light24,
                  width = 1000, height = 1000, title='The Number of Days Ad is Listed Per Price and Condition of Vehicle')
 fig.show()
-
+st.plotly_chart(fig)
 
 ads_by_make= pd.DataFrame(df_car_ads_mod.groupby('make')['model'].count())
 ads_by_make.reset_index(inplace=True)

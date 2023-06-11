@@ -14,8 +14,8 @@ st.header('The Number of Days Ad is Listed Per Price and Vehicle Condition')
 fig = px.scatter(df_car_ads_mod, x="days_listed", y="price", color="condition",
                  size='days_listed', hover_data=['type', 'make'], color_discrete_sequence=px.colors.qualitative.Light24,
                  width = 1000, height = 1000, title='The Number of Days Ad is Listed Per Price and Condition of Vehicle')
-fig.show()
-st.plotly_chart(fig)
+
+st.write(fig)
 
 ads_by_make= pd.DataFrame(df_car_ads_mod.groupby('make')['model'].count())
 ads_by_make.reset_index(inplace=True)
@@ -29,8 +29,8 @@ fig = px.pie(ads_by_make,
              color='make',
              color_discrete_sequence=px.colors.qualitative.Light24)
 
-fig.show()
-st.plotly_chart(fig)
+
+st.write(fig)
 
 ads_by_type= pd.DataFrame(df_car_ads_mod.groupby('type')['make'].count())
 ads_by_type.reset_index(inplace=True)
@@ -43,6 +43,6 @@ fig = px.bar(ads_by_type,
              color='type',
              color_discrete_sequence=px.colors.qualitative.Light24,
             title='Number of Ads Per Vehicle Type')
-fig.show()
-st.plotly_chart(fig)
+
+st.write(fig)
 

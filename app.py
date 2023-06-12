@@ -49,7 +49,7 @@ st.write(fig)
 condition_days_listed= pd.DataFrame(df_car_ads_mod.groupby(['days_listed','condition']).count())
 condition_days_listed.reset_index(inplace=True)
 fig = px.histogram(condition_days_listed, x="days_listed", y="price", color="condition",
-                 size='price', hover_data=['condition','days_listed'],
+                 hover_data=['condition','days_listed'],
                 color_discrete_sequence=px.colors.qualitative.Light24,
                  width = 1000, height = 1000, title='The Number of Ads Per Days Listed & Per Condition',
                 labels={
